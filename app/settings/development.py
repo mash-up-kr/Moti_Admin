@@ -4,14 +4,6 @@ from pathlib import Path
 env_path = Path('.') / '.env.development'
 load_dotenv(dotenv_path=env_path)
 
-INSTALLED_APPS += [
-    'debug_toolbar',
-]
-
-MIDDLEWARE += [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-]
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
