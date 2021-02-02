@@ -20,5 +20,5 @@ class Question(models.Model):
     class Meta:
         managed = False
         db_table = "questions"
-        verbose_name = _("질문 목록")
-        verbose_name_plural = _("질문 목록")
+        verbose_name = _("수집 질문 목록")
+        verbose_name_plural = _("수집 질문 목록")
