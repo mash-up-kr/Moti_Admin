@@ -11,6 +11,9 @@ ALLOWED_HOSTS = ["*"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+INTERNAL_IPS = ["*"]
+ALLOWED_HOSTS = ["*"]
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
