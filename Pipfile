@@ -13,6 +13,7 @@ mysqlclient = "*"
 python-dotenv = "*"
 django-admin-rangefilter = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.9"
