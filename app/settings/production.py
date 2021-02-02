@@ -4,6 +4,8 @@ from pathlib import Path
 env_path = Path('.') / '.env.production'
 load_dotenv(dotenv_path=env_path)
 
+SECRET_KEY = os.environ.get('SECRET_KEY', 'SOME+RANDOM+KEY(z9+3vnm(jb0u@&w68t#5_e8s9-lbfhv-')
+
 ALLOWED_HOSTS = ["*"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
