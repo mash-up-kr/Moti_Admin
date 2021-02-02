@@ -8,7 +8,7 @@ class AnswerAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "short_content",
-        "imageUrl",
+        "preview_image_url",
         "date",
         "setDate",
         "no",
@@ -20,14 +20,16 @@ class AnswerAdmin(admin.ModelAdmin):
     )
     list_display_links = ("short_content",)
     fields = (
-        "imageUrl",
         "content",
         "no",
         "missionId",
         "fileId",
         "userId",
+        "imageUrl",
+        "content_image_url",
     )
     readonly_fields = (
+        "content_image_url",
         "date",
         "setDate",
         "createdAt",

@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import truncatechars
+from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 
 from files.models import Parts
@@ -83,3 +84,16 @@ class Answer(models.Model):
     @property
     def short_content(self):
         return truncatechars(self.content, 35)
+    short_content.fget.short_description = _("주관식 답변 내용")
+
+    def preview_image_url(self):
+        if self.imageUrl is not None:
+            return mark_safe('<img src="{}" width="240px" style="border: 1px dotted #666;" />'.format(self.imageUrl))
+        return "-"
+    preview_image_url.short_description = "첨부 이미지 파일 미리보기"
+    preview_image_url.allow_tags = True
+
+    def content_image_url(self):
+        return mark_safe('<img src="{}" style="border: 1px dotted #666;" />'.format(self.imageUrl))
+    content_image_url.short_description = "첨부 이미지 파일"
+    content_image_url.allow_tags = True
