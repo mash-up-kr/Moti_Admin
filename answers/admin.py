@@ -3,6 +3,7 @@ from rangefilter.filter import DateTimeRangeFilter
 
 from answers.models import Answer
 
+
 @admin.register(Answer)
 class AnswerAdmin(admin.ModelAdmin):
     list_display = (
