@@ -6,6 +6,7 @@ from answers.models import Answer
 
 @admin.register(Answer)
 class AnswerAdmin(admin.ModelAdmin):
+    list_per_page = 30
     list_display = (
         "id",
         "short_content",

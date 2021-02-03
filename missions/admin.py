@@ -6,6 +6,7 @@ from missions.models import Mission
 
 @admin.register(Mission)
 class MissionAdmin(admin.ModelAdmin):
+    list_per_page = 30
     list_display = (
         "title",
         "isContent",
