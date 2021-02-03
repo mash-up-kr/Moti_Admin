@@ -11,13 +11,9 @@ class QuestionAdmin(admin.ModelAdmin):
         "createdAt",
         "updatedAt",
     )
-    fields = (
-        "content",
-    )
+    fields = ("content",)
     readonly_fields = (
         "createdAt",
         "updatedAt",
     )
-    list_filter = (
-        ('createdAt', DateTimeRangeFilter),
-    )
+    list_filter = (("createdAt", DateTimeRangeFilter),)

@@ -34,7 +34,8 @@ class UserAdmin(admin.ModelAdmin):
         "createdAt",
         "updatedAt",
     )
-    search_fields = ("email__exact", "snsId__exact",)
-    list_filter = (
-        ('createdAt', DateTimeRangeFilter),
+    search_fields = (
+        "email__exact",
+        "snsId__exact",
     )
+    list_filter = (("createdAt", DateTimeRangeFilter),)

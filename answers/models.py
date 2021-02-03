@@ -11,26 +11,20 @@ from users.models import User
 class Answer(models.Model):
     imageUrl = models.URLField(
         max_length=255,
-        default='',
+        default="",
         null=True,
         verbose_name=_("첨부 이미지파일 주소"),
     )
 
     content = models.TextField(
-        default='',
+        default="",
         null=False,
         verbose_name=_("주관식 답변 내용"),
     )
 
-    date = models.DateField(
-        auto_now=True,
-        verbose_name=_("파츠 지급 날짜")
-    )
+    date = models.DateField(auto_now=True, verbose_name=_("파츠 지급 날짜"))
 
-    setDate = models.DateField(
-        auto_now=True,
-        verbose_name=_("파츠 첫 생성 날짜")
-    )
+    setDate = models.DateField(auto_now=True, verbose_name=_("파츠 첫 생성 날짜"))
 
     no = models.IntegerField(
         default=0,
@@ -84,16 +78,13 @@ class Answer(models.Model):
     @property
     def short_content(self):
         return truncatechars(self.content, 35)
+
     short_content.fget.short_description = _("주관식 답변 내용")
 
-    def preview_image_url(self):
-        if self.imageUrl is not None:
-            return mark_safe('<img src="{}" width="240px" style="border: 1px dotted #666;" />'.format(self.imageUrl))
-        return "-"
-    preview_image_url.short_description = "첨부 이미지 파일 미리보기"
-    preview_image_url.allow_tags = True
-
     def content_image_url(self):
-        return mark_safe('<img src="{}" style="border: 1px dotted #666;" />'.format(self.imageUrl))
+        return mark_safe(
+            '<img src="{}" style="border: 1px dotted #666;" />'.format(self.imageUrl)
+        )
+
     content_image_url.short_description = "첨부 이미지 파일"
     content_image_url.allow_tags = True

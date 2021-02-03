@@ -4,11 +4,13 @@ from django.utils.translation import gettext_lazy as _
 from files.models import Parts
 from missions.models import Mission
 
+
 class SexChoices(models.TextChoices):
     """ 성별 목록 """
 
     FEMALE = "여", "여자"
     MALE = "남", "남자"
+
 
 class User(models.Model):
 
@@ -17,21 +19,18 @@ class User(models.Model):
         ("여", "여자"),
     )
 
-    birthday = models.DateField(
-        null=True,
-        verbose_name=_("생년월일")
-    )
+    birthday = models.DateField(null=True, verbose_name=_("생년월일"))
 
     email = models.CharField(
         max_length=255,
-        default='',
+        default="",
         null=False,
         verbose_name=_("이메일"),
     )
 
     name = models.CharField(
         max_length=255,
-        default='',
+        default="",
         null=True,
         verbose_name=_("이름"),
     )
@@ -44,35 +43,31 @@ class User(models.Model):
         verbose_name=_("성별"),
     )
 
-    refreshDate = models.DateField(
-        auto_now=True,
-        null=True,
-        verbose_name=_("새로 고침 날짜")
-    )
+    refreshDate = models.DateField(auto_now=True, null=True, verbose_name=_("새로 고침 날짜"))
 
     refreshToken = models.CharField(
         max_length=255,
-        default='',
+        default="",
         null=True,
         verbose_name=_("이름"),
     )
 
     mission = models.TextField(
-        default='',
+        default="",
         null=True,
         verbose_name=_("미션 JSON"),
     )
 
     snsId = models.CharField(
         max_length=255,
-        default='',
+        default="",
         null=False,
         verbose_name=_("소셜 아이디"),
     )
 
     snsType = models.CharField(
         max_length=255,
-        default='',
+        default="",
         null=False,
         verbose_name=_("소셜 타입"),
     )

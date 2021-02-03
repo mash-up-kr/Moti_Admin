@@ -31,5 +31,5 @@ class PartsAdmin(admin.ModelAdmin):
     )
     list_filter = (
         "part",
-        ('createdAt', DateTimeRangeFilter),
+        ("createdAt", DateTimeRangeFilter),
     )

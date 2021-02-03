@@ -1,10 +1,11 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+
 class Question(models.Model):
     content = models.CharField(
         max_length=255,
-        default='',
+        default="",
         null=False,
         verbose_name=_("질문 내용"),
     )

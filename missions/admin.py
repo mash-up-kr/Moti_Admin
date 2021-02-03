@@ -27,5 +27,5 @@ class MissionAdmin(admin.ModelAdmin):
     list_filter = (
         "isContent",
         "isImage",
-        ('createdAt', DateTimeRangeFilter),
+        ("createdAt", DateTimeRangeFilter),
     )

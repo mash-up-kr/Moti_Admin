@@ -9,7 +9,6 @@ class AnswerAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "short_content",
-        "preview_image_url",
         "date",
         "setDate",
         "no",
@@ -46,11 +45,8 @@ class AnswerAdmin(admin.ModelAdmin):
         "missionId",
         "userId",
     )
-    list_filter = (
-        "fileId__part",
-        "missionId"
-    )
+    list_filter = ("fileId__part", "missionId")
     search_fields = (
         "userId__email__exact",
-        ('createdAt', DateTimeRangeFilter),
+        ("createdAt", DateTimeRangeFilter),
     )
