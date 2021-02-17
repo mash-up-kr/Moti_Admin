@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Mission(models.Model):
-    title = models.URLField(
+    title = models.CharField(
         max_length=255,
         default="",
         null=False,
