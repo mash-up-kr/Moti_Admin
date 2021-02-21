@@ -6,9 +6,8 @@ from files.models import Parts
 
 @admin.register(Parts)
 class PartsAdmin(admin.ModelAdmin):
-    list_per_page = 30
+    list_per_page = 10
     list_display = (
-        "card_png_url_small_tag",
         "part",
         "createdAt",
         "updatedAt",
